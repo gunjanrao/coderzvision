@@ -1,0 +1,75 @@
+<header role="banner">
+  {{ page.header }}
+  {% if page.nav_branding or page.nav_main or page.nav_additional %}
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a href="/ticket-page" class="btn btn-outline-dark d-lg-none ms-auto me-4">Get Started</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        {{ page.nav_main }}
+        <a href="#" class="btn btn-outline-dark d-lg-block d-none">Get Started</a>
+      </div>
+    </div>
+  </nav>
+  {% endif %}
+</header>
+{{ page.banner }}
+<section class="py-5 bg-light">
+  <div class="container">
+    {{ page.contact_form }}
+  </div>
+</section>
+<div class="container py-5">
+  {{ page.services }}
+</div>
+<section class="content-section d-flex gap-4 p-4 bg-light">
+  <div class="container">
+    {{ page.whatwedo }}
+  </div>
+</section>
+
+<main role="main">
+  <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+  <div class="{{ b5_top_container }}">
+    {% if page.breadcrumb %}
+    {{ page.breadcrumb }}
+    {% endif %}
+    <div class="row g-0">
+      {% if page.sidebar_first %}
+      <div class="order-2 order-lg-1 {{ sidebar_first_classes }}">
+        {{ page.sidebar_first }}
+      </div>
+      {% endif %}
+      <div class="order-1 order-lg-2 {{ content_classes }}">
+        {{ page.content }}
+      </div>
+      {% if page.sidebar_second %}
+      <div class="order-3 {{ sidebar_second_classes }}">
+        {{ page.sidebar_second }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</main>
+
+<section class="bg-primary py-4">
+  <div class="container">
+    {{ page.company_contact }}
+  </div>
+</section>
+
+
+{% if page.footer %}
+<section class="bg-dark text-white py-5">
+  <div class="container">
+    {{ page.footer }}
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 Vishak India. All Rights Reserved.</p>
+</footer>
+{% endif %}

@@ -1,0 +1,20 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_menu().
+ */
+function contact_form_handler_menu() {
+  $items = [];
+  
+  // Add a route for viewing submissions.
+  $items['admin/content/contact-submissions'] = [
+    'title' => 'Contact Submissions',
+    'page callback' => 'Drupal\contact_form_handler\Controller\ContactFormController::listSubmissions',
+    'access callback' => 'Drupal\Core\Access\AccessManager::checkPermission',
+    'access arguments' => ['administer site configuration'],
+  ];
+
+  return $items;
+}

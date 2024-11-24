@@ -1,0 +1,10 @@
+global-styling:
+  css:
+    theme:
+      https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css: {type: external}
+      https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css: {type: external}
+      css/style.css: {}
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/jquery
